@@ -1,0 +1,18 @@
+
+<%user_errors%>
+
+<% @user.errors.full_messages.each do |msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+
+<div class="container">
+  <h1>Register</h1>
+  <div class="w-25 border border-secondary mt-3 p-3 rounded">
+    <%= form_for @user, url: {action: "create"} do |f| %>
+      Name: <%= f.text_field :name, placeholder: "First name", class:"form-control my-2 #{@uclas1}"%><br />
+      <%= f.submit "Create", class: 'btn btn-success my-2' %>
+    <% end %>
+ </div>
+</div>
