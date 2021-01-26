@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_174500) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
-  add_foreign_key "fishings", "users", column: "author_id"
+  add_foreign_key "fishings", "users", column: "author_id", on_delete: :cascade
   add_foreign_key "votes", "fishings"
   add_foreign_key "votes", "users"
 end

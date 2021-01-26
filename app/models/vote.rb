@@ -1,4 +1,4 @@
 class Vote < ApplicationRecord
-  belongs_to :userid
-  belongs_to :fishingid
+  belongs_to :user
+  belongs_to :fishing
 end
