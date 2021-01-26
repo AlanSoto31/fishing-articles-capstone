@@ -1,2 +1,3 @@
 class FishingsController < ApplicationController
+    
 end

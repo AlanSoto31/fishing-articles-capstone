@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_01_26_174500) do
 
   create_table "fishings", force: :cascade do |t|
-    t.integer "authorid_id", null: false
+    t.integer "author_id"
     t.string "title"
     t.text "text"
-    t.string "image"
+    t.string "imagen"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["authorid_id"], name: "index_fishings_on_authorid_id"
+    t.index ["author_id"], name: "index_fishings_on_author_id"
   end
 
   create_table "priorities", force: :cascade do |t|
@@ -36,15 +36,15 @@ ActiveRecord::Schema.define(version: 2021_01_26_174500) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "userid_id", null: false
-    t.integer "fishingid_id", null: false
+    t.integer "user_id", null: false
+    t.integer "fishing_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["fishingid_id"], name: "index_votes_on_fishingid_id"
-    t.index ["userid_id"], name: "index_votes_on_userid_id"
+    t.index ["fishing_id"], name: "index_votes_on_fishing_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
-  add_foreign_key "fishings", "authorids"
-  add_foreign_key "votes", "fishingids"
-  add_foreign_key "votes", "userids"
+  add_foreign_key "fishings", "users", column: "author_id"
+  add_foreign_key "votes", "fishings"
+  add_foreign_key "votes", "users"
 end
