@@ -13,6 +13,8 @@
         <div class="card-body ">
           <h4 class="card-title"><%=a.title%></h4>
           <p class="card-text"><%= a.text %></p>
+          <%make_vote(a.id)%>
+          <%=@vote%>
         </div>
       </div>
     </div>
