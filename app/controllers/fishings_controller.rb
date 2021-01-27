@@ -13,7 +13,7 @@ class FishingsController < ApplicationController
   def create
     @fishing = current_user.fishings.build(fishing_params)
     if @fishing.save
-      redirect_to @fishing
+      redirect_to root_path
     else
       render 'new'
     end
