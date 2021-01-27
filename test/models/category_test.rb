@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PrioritiesControllerTest < ActionDispatch::IntegrationTest
+class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

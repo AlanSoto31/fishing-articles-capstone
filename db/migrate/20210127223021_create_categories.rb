@@ -1,6 +1,6 @@
-class CreatePriorities < ActiveRecord::Migration[6.0]
+class CreateCategories < ActiveRecord::Migration[6.0]
   def change
-    create_table :priorities do |t|
+    create_table :categories do |t|
       t.string :name
       t.string :priority
 
