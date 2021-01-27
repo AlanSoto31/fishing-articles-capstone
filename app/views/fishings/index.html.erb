@@ -4,8 +4,25 @@
 <br>
 <br>
 <div class="container">
-  <h2 class="my-4"> Fishing Articles </h2>
+  <h2 class="my-4"> Most voted fishing article </h2>
   <div class="row">
+    <div class="col-sm-3 mb-4">
+      <div class="card border-dark">
+      <%= image_tag( "default_img.jpg", alt: "default_image", class: "card-img-top") -%> 
+        <div class="card-body ">
+          <h4 class="card-title"><%=@favorite_fishings.title%></h4>
+          <p class="card-text"><%= @favorite_fishings.text %></p>
+          <%=@favorite_fishings.votes.count%>
+          <%make_vote(@favorite_fishings.id)%>
+          <%=@vote%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--
     <% @fishings.each do |a| %>
     <div class="col-sm-3 mb-4">
       <div class="card border-dark">
@@ -13,11 +30,11 @@
         <div class="card-body ">
           <h4 class="card-title"><%=a.title%></h4>
           <p class="card-text"><%= a.text %></p>
+          <%=a.votes.count%>
           <%make_vote(a.id)%>
           <%=@vote%>
         </div>
       </div>
     </div>
     <% end %>
-  </div>
-</div>
+   --> 
