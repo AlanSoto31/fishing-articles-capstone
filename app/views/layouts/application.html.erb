@@ -18,6 +18,16 @@
   </head>
 
   <body>
+    <nav class="navbar fixed-top navbar-dark bg-primary p-2">
+      <%nav_bar_buttons%>
+      <h2 class="text-white"><%= @welcome %></h2>
+      <h2 class="text-white">Fishing</h2>
+      <div>
+        <%= @su_button %>
+        <%= @si_button %>
+        <%= @so_button %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
