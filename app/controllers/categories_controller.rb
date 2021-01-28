@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all
+    @more_important_categories = Category.all.order_by_priority
     @favorite_fishings = Fishing.all.order_by_votes.first
   end
 

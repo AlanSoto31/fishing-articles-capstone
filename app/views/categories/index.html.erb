@@ -19,4 +19,19 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <% @more_important_categories.each do |c| %>
+    <div class="col-sm-3 mb-4">
+      <div class="card border-dark">
+      <%= image_tag( "default_img.jpg", alt: "default_image", class: "card-img-top") -%> 
+        <div class="card-body ">
+          <h4 class="card-title"><%=c.name%></h4>
+          <h4 class="card-title"><%=c.priority%></h4>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
 </div>
