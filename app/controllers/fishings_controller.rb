@@ -4,7 +4,6 @@ class FishingsController < ApplicationController
 
   def index
     @fishings = Fishing.all
-    @favorite_fishings = Fishing.all.order_by_votes.first
   end
   
   def new
