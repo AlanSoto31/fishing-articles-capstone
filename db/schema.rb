@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_184743) do
+ActiveRecord::Schema.define(version: 2021_01_29_190658) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -36,7 +36,9 @@ ActiveRecord::Schema.define(version: 2021_01_28_184743) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "votes_count"
+    t.integer "category_id"
     t.index ["author_id"], name: "index_fishings_on_author_id"
+    t.index ["category_id"], name: "index_fishings_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_184743) do
 
   add_foreign_key "categorizes", "categories"
   add_foreign_key "categorizes", "fishings"
+  add_foreign_key "fishings", "categories"
   add_foreign_key "fishings", "users", column: "author_id"
   add_foreign_key "votes", "fishings"
   add_foreign_key "votes", "users"

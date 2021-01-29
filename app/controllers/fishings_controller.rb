@@ -12,7 +12,12 @@ class FishingsController < ApplicationController
 
   def create
     @fishing = current_user.fishings.build(fishing_params)
+
     if @fishing.save
+      @algo = fishing_params[:category_id][1..]
+      @algo.map!(&:to_i)
+      @category = Category.where(id: @algo)
+      @fishing.categories << @category
       redirect_to root_path
     else
       render 'new'
@@ -28,6 +33,7 @@ class FishingsController < ApplicationController
   private
 
   def fishing_params
-    params.require(:fishing).permit(:author_id, :title, :text, :image)
+    params.require(:fishing).permit(:author_id, :title, :text, :image, category_id: [])
   end
+
 end
