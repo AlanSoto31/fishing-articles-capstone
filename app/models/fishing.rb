@@ -1,8 +1,8 @@
 class Fishing < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-  has_many :votes
-  has_many :categorizes
-  has_many :categories, through: :categorizes
+  has_many :votes, dependent: :delete_all
+  has_many :categorizes, dependent: :delete_all
+  has_many :categories, through: :categorizes, dependent: :delete_all
 
   scope :order_by_votes, -> { order(votes_count: :desc) } 
 
