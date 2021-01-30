@@ -29,6 +29,9 @@
         <div class="card-body ">
           <h4 class="card-title"><%=c.name%></h4>
           <h4 class="card-title"><%=c.priority%></h4>
+          <%first_article_by_category(c.id)%> 
+          <%=@first_article%>
+          <%= link_to 'More details...', category_path(c), class: 'btn btn-primary'%>
         </div>
       </div>
     </div>
