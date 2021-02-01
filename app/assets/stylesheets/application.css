@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.top-menu h2, span, i{
+	color: #4E443E;
+}
+
+.top-menu a{
+	color: #85817D;
+}
+
+/*
+.top-menu a:visited {
+	color: #777;
+}
+
+
+.top-menu a:hover {
+	color: red;
+}
+
+.top-menu a:active {
+	color: pink;
+}
+*/
+.top-menu a:focus {
+	color: pink;
+}
