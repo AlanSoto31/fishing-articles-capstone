@@ -5,8 +5,25 @@
 <br>
 <%=@category.name%>
 <br>
-<ul>
+
   <%@fishings_by_category.each do |a|%>
-    <li><%=a.title%></li>
+<div class="container">
+  <h2 class="my-4"> Articles </h2>
+  <div class="row">
+    <div class="col-sm-3 mb-4">
+      <div class="card border-dark">
+        <%check_img_exist(a)%>
+        <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
+        <div class="card-body ">
+          <h4 class="card-title"><%=a.title%></h4>
+          <p class="card-text"><%= a.text %></p>
+          <%=a.votes.count%>
+          <%make_vote(a.id)%>
+          <%=@vote%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <%end%>
-</ul>
+

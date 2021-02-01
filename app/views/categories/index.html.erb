@@ -8,7 +8,8 @@
   <div class="row">
     <div class="col-sm-3 mb-4">
       <div class="card border-dark">
-      <%= image_tag( "default_img.jpg", alt: "default_image", class: "card-img-top") -%> 
+        <%check_img_exist(@favorite_fishings)%>
+        <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
         <div class="card-body ">
           <h4 class="card-title"><%=@favorite_fishings.title%></h4>
           <p class="card-text"><%= @favorite_fishings.text %></p>
@@ -25,12 +26,13 @@
     <% @more_important_categories.each do |c| %>
     <div class="col-sm-3 mb-4">
       <div class="card border-dark">
-      <%= image_tag( "default_img.jpg", alt: "default_image", class: "card-img-top") -%> 
+      <%first_article_by_category(c.id)%>
+      <%check_img_exist(@first_article)%> 
+      <%= image_tag( @img, alt: "default_image", class: "card-img-top") %>
         <div class="card-body ">
           <h4 class="card-title"><%=c.name%></h4>
           <h4 class="card-title"><%=c.priority%></h4>
-          <%first_article_by_category(c.id)%> 
-          <%=@first_article%>
+          <%=@first_article.title%>
           <%= link_to 'More details...', category_path(c), class: 'btn btn-primary'%>
         </div>
       </div>
