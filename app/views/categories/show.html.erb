@@ -1,29 +1,27 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<%=@category.name%>
-<br>
-
+<div class="row g-0 show_cat_container">
   <%@fishings_by_category.each do |a|%>
-<div class="container">
-  <h2 class="my-4"> Articles </h2>
-  <div class="row">
-    <div class="col-sm-3 mb-4">
-      <div class="card border-dark">
-        <%check_img_exist(a)%>
-        <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
-        <div class="card-body ">
-          <h4 class="card-title"><%=a.title%></h4>
-          <p class="card-text"><%= a.text %></p>
-          <%=a.votes.count%>
-          <%make_vote(a.id)%>
-          <%=@vote%>
+    <div class="col-6">
+      <div class="card" >
+        <div class="row g-0">
+          <div class="col-md-6">
+            <%check_img_exist(a)%>
+            <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
+          </div>
+          <div class="col-6 p-2 d-flex flex-column justify-content-between">
+            <h5 class="category_titles_2"><%=@category.name%></h5>
+            <div>
+              <h5><%=a.title%></h5>
+              <p><%= a.text %></p>
+              <p class="text-secondary"><%="By #{a.author.name}" %></p>
+            </div>
+            <%make_vote(a.id)%>
+            <span><%=@vote%></span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
   <%end%>
-
+</div>
