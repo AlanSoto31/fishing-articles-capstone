@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.titles_color {
+	color: #4E443E;
+}
+
 .top-menu h2, span, i{
 	color: #4E443E;
 }

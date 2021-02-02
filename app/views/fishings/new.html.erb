@@ -1,19 +1,12 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-  <h1>Create Articles</h1>
-  <div class="w-25 border border-secondary mt-5 p-3 rounded">
-    <%= form_for @fishing, url: {action: "create"} do |f| %>
-        <%= f.label :title, nil, class: 'label' %>
-        <%= f.text_field :title, placeholder: "Put a title", class:"form-control my-2 #{@clas1}" %>
-        <%= f.label :text, nil, class: 'label' %>
-        <%= f.text_field :text, placeholder: "Description", class:"form-control my-2 #{@clas2}" %>
-        <%= f.file_field :image%>
-        <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {multiple: true}%>
-        <%= f.submit "Create", class: 'btn btn-success  my-2' %>
-    <% end %>
-  </div>
+
+<div class="w-50 border border-secondary p-3 rounded centered_XY">
+  <h5 class="text-center titles_color">New Article</h5>
+  <%= form_for @fishing, url: {action: "create"} do |f| %>
+      <%= f.text_field :title, placeholder: "Title", class:"form-control my-2 #{@clas1}" %>
+      <%= f.text_field :text, placeholder: "Content", class:"form-control my-2 #{@clas2}" %>
+      <%= f.file_field :image, class:'form-control my-2' %>
+      <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: 'Select a Category'}, { multiple: true, class: "btn btn-light dropdown-toggle  w-100" }%>
+      <br>
+      <%= f.submit "Create", class: 'btn btn-success  my-2 w-100' %>
+  <% end %>
 </div>
