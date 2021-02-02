@@ -14,9 +14,9 @@ class FishingsController < ApplicationController
     @fishing = current_user.fishings.build(fishing_params)
 
     if @fishing.save
-      @algo = fishing_params[:category_id][1..]
-      @algo.map!(&:to_i)
-      @category = Category.where(id: @algo)
+      @cat_ids_arr = fishing_params[:category_id][1..]
+      @cat_ids_arr.map!(&:to_i)
+      @category = Category.where(id: @cat_ids_arr)
       @fishing.categories << @category
       redirect_to root_path
     else
@@ -27,6 +27,22 @@ class FishingsController < ApplicationController
   def destroy
     @fishing = Fishing.find(params[:id])
     @fishing.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @fishing = Fishing.find(params[:id])
+  end
+
+  def update
+    @fishing = Fishing.find(params[:id])
+
+    @cat_ids_arr = fishing_params[:category_id][1..]
+    @cat_ids_arr.map!(&:to_i)
+    @category = Category.where(id: @cat_ids_arr)
+    @fishing.categories << @category
+    
+    @fishing.update_attributes(fishing_params)
     redirect_to root_path
   end
 

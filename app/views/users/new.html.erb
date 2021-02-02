@@ -1,11 +1,11 @@
 
 <div class="w-50 border border-secondary p-3 rounded centered_XY">
-  <%user_errors%>
-  <% @user.errors.full_messages.each do |msg| %>
-    <div class="alert alert-info">
-      <%= msg %>
-    </div>
-  <% end %>
+<%user_errors%>
+<% @user.errors.full_messages.each do |msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
   <h5 class="text-center titles_color">Register</h5>
   <%= form_for @user, url: {action: "create"} do |f| %>
     <%= f.text_field :name, placeholder: "User name", class:"form-control #{@uclas1}"%><br />
