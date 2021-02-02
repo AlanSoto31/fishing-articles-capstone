@@ -22,20 +22,18 @@
 	color: #85817D;
 }
 
-/*
-.top-menu a:visited {
-	color: #777;
+.bottom-menu {
+	background-color:  #4E443E;
 }
 
-
-.top-menu a:hover {
-	color: red;
+.bottom-menu h2{
+	color: white;
 }
 
-.top-menu a:active {
-	color: pink;
+.bottom-menu i {
+	font-size: 25px;
+	color: orangered;
 }
-*/
 
 .top-menu a:focus {
 	color: orangered;

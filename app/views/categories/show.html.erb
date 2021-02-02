@@ -1,27 +1,29 @@
-<br>
-<br>
-<br>
-<div class="row g-0 show_cat_container">
-  <%@fishings_by_category.each do |a|%>
-    <div class="col-6">
-      <div class="card" >
-        <div class="row g-0">
-          <div class="col-md-6">
-            <%check_img_exist(a)%>
-            <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
-          </div>
-          <div class="col-6 p-2 d-flex flex-column justify-content-between">
-            <h5 class="category_titles_2"><%=@category.name%></h5>
-            <div>
-              <h5><%=a.title%></h5>
-              <p><%= a.text %></p>
-              <p class="text-secondary"><%="By #{a.author.name}" %></p>
+
+<div class="">
+
+  <div class="row g-0 show_cat_container centered">
+    <%@fishings_by_category.each do |a|%>
+      <div class="col-6">
+        <div class="card" >
+          <div class="row g-0">
+            <div class="col-md-6">
+              <%check_img_exist(a)%>
+              <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
             </div>
-            <%make_vote(a.id)%>
-            <span><%=@vote%></span>
+            <div class="col-6 p-2 d-flex flex-column justify-content-between">
+              <h5 class="category_titles_2"><%=@category.name%></h5>
+              <div>
+                <h5><%=a.title%></h5>
+                <p><%= a.text %></p>
+                <p class="text-secondary"><%="By #{a.author.name}" %></p>
+              </div>
+              <%make_vote(a.id)%>
+              <span><%=@vote%></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
+
 </div>

@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .main_article_img_container, .wheather_img_container {
-  height: 445px; 
+  height: 420px; 
   width: 100%; 
 }
 
 .category_imgs_container {
-  height: 250px; 
+  height: 225px; 
   width: 100%; 
 }
 
@@ -38,5 +38,12 @@
   color: orange;
   text-decoration: underline;
 }
+
+.centered {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 
 
