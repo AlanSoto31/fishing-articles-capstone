@@ -1,43 +1,45 @@
 <br>
 <br>
-<br>
-<br>
-<br>
-<div class="container">
-  <h2 class="my-4"> Most voted fishing article </h2>
-  <div class="row">
-    <div class="col-sm-3 mb-4">
-      <div class="card border-dark">
+  <div class="row g-0">
+    <div class="col-9">
+      <div class="card">
         <%check_img_exist(@favorite_fishings)%>
-        <%= image_tag( @img, alt: "default_image", class: "card-img-top") %> 
-        <div class="card-body ">
-          <h4 class="card-title"><%=@favorite_fishings.title%></h4>
-          <p class="card-text"><%= @favorite_fishings.text %></p>
-          <%=@favorite_fishings.votes.count%>
-          <%make_vote(@favorite_fishings.id)%>
-          <%=@vote%>
+        <div class="main_article_img_container">
+          <%= image_tag( @img, alt: "default_image", class: "card-img main_article_img") %>
+        </div>
+        <div class="card-img-overlay d-flex flex-column">
+          <div class="mt-auto">
+          <h4 class="card-title fw-bold"><%=@favorite_fishings.title%></h4>
+          <p class="card-text text-white fw-bold"><%= @favorite_fishings.text %></p>
+        </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <h2 class="my-4"> Categories order by priority</h2>
-  <div class="row">
-    <% @more_important_categories.each do |c| %>
-    <div class="col-sm-3 mb-4">
-      <div class="card border-dark">
-      <%first_article_by_category(c.id)%>
-      <%check_img_exist(@first_article)%> 
-      <%= image_tag( @img, alt: "default_image", class: "card-img-top") %>
-        <div class="card-body ">
-          <h4 class="card-title"><%=c.name%></h4>
-          <h4 class="card-title"><%=c.priority%></h4>
-          <%=@first_article.title%>
-          <%= link_to 'More details...', category_path(c), class: 'btn btn-primary'%>
-        </div>
+    <div class="col-3">
+      <div class="wheather_img_container">
+        <%= image_tag( "weather_img.webp", alt: "default_image", class: "wheather_img") %>
       </div>
     </div>
-    <% end %>
+  </div>
+  
+
+  <div class="row g-0">
+      <% @more_important_categories.each do |c| %>
+      <div class="col-3">
+        <div class="card">
+          <%first_article_by_category(c.id)%>
+          <%check_img_exist(@first_article)%> 
+          <div class="category_imgs_container">
+            <%= image_tag( @img, alt: "default_image", class: "category_imgs card-img ") %>
+          </div>
+          <div class="card-img-overlay d-flex flex-column">
+            <h4 class="card-title"><%=link_to c.name, category_path(c), class: "text-decoration-none text-dark fw-bold"%></h4>
+            <h6 class="card-text mt-auto text-white fw-bold"><%=@first_article.title%></h6>
+          </div>
+        </div>
+      </div>
+      <% end %>
   </div>
 
-</div>
+
+

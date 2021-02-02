@@ -1,3 +1,20 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.main_article_img_container, .wheather_img_container {
+  height: 445px; 
+  width: 100%; 
+}
+
+.category_imgs_container {
+  height: 250px; 
+  width: 100%; 
+}
+
+.main_article_img, .category_imgs, .wheather_img{
+  height: 100%; 
+  width: 100%; 
+  object-fit: fill;
+}
+

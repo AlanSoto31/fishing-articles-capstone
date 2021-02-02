@@ -36,6 +36,7 @@
 	color: pink;
 }
 */
+
 .top-menu a:focus {
-	color: pink;
+	color: orangered;
 }
