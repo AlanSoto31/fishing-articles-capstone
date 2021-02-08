@@ -1,6 +1,7 @@
 class FishingsController < ApplicationController
 
   before_action :authenticate_user, only: %i[new create]
+  before_action :check_categories, only: %i[create update]
 
   def index
     @fishings = Fishing.all
@@ -41,9 +42,19 @@ class FishingsController < ApplicationController
     @cat_ids_arr.map!(&:to_i)
     @category = Category.where(id: @cat_ids_arr)
     @fishing.categories << @category
-    
+
     @fishing.update_attributes(fishing_params)
     redirect_to root_path
+  end
+
+  def check_categories
+    @fishing = Fishing.new
+    if fishing_params[:category_id][0].blank? && fishing_params[:category_id][1].blank?
+      @fishing.errors.add(:category_id, "can't be blank")
+      render 'new'
+    else
+      return
+    end
   end
 
   private

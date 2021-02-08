@@ -1,9 +1,17 @@
 
 <div class="w-50 border border-secondary p-3 rounded centered_XY">
+ 
+ <%fishing_errors%>
+  <% @fishing.errors.full_messages.each do |msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
+  
   <h5 class="text-center titles_color">New Article</h5>
   <%= form_for @fishing, url: {action: "create"} do |f| %>
-      <%= f.text_field :title, placeholder: "Title", class:"form-control my-2 #{@clas1}" %>
-      <%= f.text_field :text, placeholder: "Content", class:"form-control my-2 #{@clas2}" %>
+      <%= f.text_field :title, placeholder: "Title", class:"form-control my-2 #{@fclass1}" %>
+      <%= f.text_field :text, placeholder: "Content", class:"form-control my-2 #{@fclass2}" %>
       <%= f.file_field :image, class:'form-control my-2' %>
       <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: 'Select a Category'}, { multiple: true, class: "btn btn-light dropdown-toggle  w-100" }%>
       <br>
