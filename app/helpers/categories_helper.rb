@@ -10,6 +10,8 @@ module CategoriesHelper
   def check_img_exist(a)
     if a.image.present?
       @img = a.image
+    elsif a.imagen.present?
+      @img = a.imagen
     else
       @img = "default_img.jpg"
     end
