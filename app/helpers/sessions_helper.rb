@@ -6,6 +6,7 @@ module SessionsHelper
     else
       @article = link_to 'ARTICLE', new_fishing_path, class: 'text-decoration-none' 
       @so_button = link_to 'LOGOUT', logout_path, class: 'text-decoration-none'
+      @welcome = "Welcome #{current_user.name}!"
     end
   end
 end
