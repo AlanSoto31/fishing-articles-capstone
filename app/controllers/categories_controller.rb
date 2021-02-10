@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @fishings_by_category = Fishing.includes(:categories).where(categories: { id: params[:id] }).order(created_at: :desc)
+    @fishings_by_category = Fishing.includes(:author).includes(:categories).where(categories: { id: params[:id] }).order(created_at: :desc)
   end
   
 
