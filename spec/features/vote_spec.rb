@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Make a vote', type: :feature do
-
   before do
     u1 = User.create(name: 'ana')
     User.create(name: 'alan')
@@ -17,7 +16,6 @@ describe 'Make a vote', type: :feature do
   it 'once per user' do
     visit '/categories/1'
     click_on('Vote')
-    expect(page).to have_no_link("Vote")
+    expect(page).to have_no_link('Vote')
   end
-
 end

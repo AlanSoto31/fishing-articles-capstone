@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'User', type: :feature do
-
   before do
     u1 = User.create(name: 'ana')
     c1 = Category.create(name: 'LURES', priority: 5)
@@ -22,5 +21,4 @@ describe 'User', type: :feature do
     find("input[type='submit']").click
     expect(page).to have_content('ana')
   end
-
 end

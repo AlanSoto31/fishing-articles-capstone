@@ -1,12 +1,11 @@
 class FishingsController < ApplicationController
-
   before_action :authenticate_user, only: %i[new create]
   before_action :check_categories, only: %i[create update]
 
   def index
     @fishings = Fishing.all
   end
-  
+
   def new
     @fishing = Fishing.new
   end
@@ -49,12 +48,10 @@ class FishingsController < ApplicationController
 
   def check_categories
     @fishing = Fishing.new
-    if fishing_params[:category_id][0].blank? && fishing_params[:category_id][1].blank?
-      @fishing.errors.add(:category_id, "can't be blank")
-      render 'new'
-    else
-      return
-    end
+    return unless fishing_params[:category_id][0].blank? && fishing_params[:category_id][1].blank?
+
+    @fishing.errors.add(:category_id, "can't be blank")
+    render 'new'
   end
 
   private
@@ -62,5 +59,4 @@ class FishingsController < ApplicationController
   def fishing_params
     params.require(:fishing).permit(:author_id, :title, :text, :image, category_id: [])
   end
-
 end

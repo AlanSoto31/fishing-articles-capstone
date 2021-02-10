@@ -1,5 +1,4 @@
 module FishingsHelper
-  
   def fishing_errors
     return unless @fishing.errors.any?
 

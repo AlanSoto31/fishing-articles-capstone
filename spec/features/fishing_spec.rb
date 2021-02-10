@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Create an article', type: :feature do
-
   before do
     u1 = User.create(name: 'ana')
     c1 = Category.create(name: 'LURES', priority: 5)
@@ -20,7 +19,6 @@ describe 'Create an article', type: :feature do
     fill_in 'fishing_text', with: 'Text2'
     find("input[type='submit']").click
     expect(page).to have_content("Category can't be blank")
-
   end
 
   it 'with require fields' do
@@ -28,10 +26,8 @@ describe 'Create an article', type: :feature do
     click_on 'ARTICLE'
     fill_in 'fishing_title', with: 'Title2'
     fill_in 'fishing_text', with: 'Text2'
-    select "LURES", :from => "fishing_category_id"
+    select 'LURES', from: 'fishing_category_id'
     find("input[type='submit']").click
     expect(page).to have_content('Title2')
-
   end
-
 end
