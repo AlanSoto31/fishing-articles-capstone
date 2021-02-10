@@ -42,6 +42,11 @@
 - [Acknowledgments](#acknowledgments)
 
 
+## Live Demo
+
+[Live version]()
+
+
 ## Built With
 
 - Ruby v2.7.0
@@ -50,9 +55,6 @@
 - Linters 
 - VS Code
 
-## Live Demo
-
-[Live version]()
 
 ## Getting Started
 
@@ -63,11 +65,13 @@ Get a local copy, type on console...
  $ git clone git@github.com:AlanSoto31/fishing-articles-capstone.git
  ````
 
+
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Ruby: 2.6.3
+- Rails: 5.2.3
+- Postgres: >=9.5
+
 
 ### Setup
 
@@ -78,6 +82,7 @@ Postgres: >=9.5
 9. Open `http://localhost:3000/` in the browser of your preference.
 10. Stop the application: `ctrl + c`
 
+
 ## Author
 
 👤 **Alan Soto**
@@ -86,19 +91,23 @@ Postgres: >=9.5
 - Twitter: [@Alan95081574](https://twitter.com/Alan95081574)
 - LinkedIn: [Alan Soto](https://www.linkedin.com/in/alan-soto-valle-b9a0511aa/)
 
+
 ## Contributing
 
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/AlanSoto31/fishing-articles-capstone/issues).
 
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
+
 ## Acknowledgments
 
 - Nelson Sakwa [original design](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version).
+
 
 ## 📝 License
 
