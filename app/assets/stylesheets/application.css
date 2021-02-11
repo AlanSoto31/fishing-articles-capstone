@@ -15,22 +15,22 @@
  */
 
 .titles_color {
-	color: #4E443E;
+  color: #4e443e;
 }
 
-.top-menu a{
-	color: #85817D;
+.top-menu a {
+  color: #85817d;
 }
 
 .bottom-menu {
-	background-color:  #4E443E;
+  background-color: #4e443e;
 }
 
 .bottom-menu i {
-	font-size: 25px;
-	color: orangered;
+  font-size: 25px;
+  color: orangered;
 }
 
 .top-menu a:focus {
-	color: orangered;
+  color: orangered;
 }

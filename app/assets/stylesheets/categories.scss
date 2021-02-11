@@ -2,28 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.main_article_img_container, .wheather_img_container {
-  height: 420px; 
-  width: 100%; 
+.main_article_img_container,
+.wheather_img_container {
+  height: 420px;
+  width: 100%;
 }
 
 .category_imgs_container {
-  height: 225px; 
-  width: 100%; 
+  height: 225px;
+  width: 100%;
 }
 
-.main_article_img, .category_imgs, .wheather_img{
-  height: 100%; 
-  width: 100%; 
+.main_article_img,
+.category_imgs,
+.wheather_img {
+  height: 100%;
+  width: 100%;
   object-fit: fill;
 }
 
-.show_cat_container a{
-	color: #4E443E;
+.show_cat_container a {
+  color: #4e443e;
 }
 
 .show_cat_container a:hover {
-	color: orangered;
+  color: orangered;
 }
 
 .category_titles_2 {
@@ -36,6 +39,3 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
-
-
