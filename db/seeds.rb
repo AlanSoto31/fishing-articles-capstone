@@ -35,7 +35,7 @@ Fishing.create(author_id: User.find_by(name: "alan").id, title: "Fishing on Amaz
 Fishing.create(author_id: User.find_by(name: "alan").id, title: "The correct weather for high seas", text: "Fusce laoreet condimentum urna vel volutpat.", votes_count: 1)
 Fishing.create(author_id: User.find_by(name: "alan").id, title: "The best lures for fishing", text: "Fusce laoreet condimentum urna vel volutpat.", imagen: 'lures.jpg', votes_count: 2)
 Fishing.create(author_id: User.find_by(name: "cosmel").id, title: "Flying rods", text: "Fusce laoreet condimentum urna vel volutpat.", imagen: 'Flying_rod.webp', votes_count: 1)
-Fishing.create(author_id: User.find_by(name: "cristian").id, title: "Salmon fishing", text: "Fusce laoreet condimentum urna vel volutpat.", imagen: 'salmon-fishing.jpeg', votes_count: 1)
+Fishing.create(author_id: User.find_by(name: "cristian").id, title: "Salmon fishing", text: "Fusce laoreet condimentum urna vel volutpat.", votes_count: 1)
 Fishing.create(author_id: User.find_by(name: "kevin").id, title: "Fosil of the seas", text: "Fusce laoreet condimentum urna vel volutpat.", imagen: 'nautilus.png', votes_count: 1)
 
 p "Created #{Fishing.count} articles"
