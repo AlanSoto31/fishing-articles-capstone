@@ -20,9 +20,8 @@
               <div class="d-flex justify-content-between">
                 <span><%="Votes:#{a.votes.count}"%></span>
                 <span><%= vote_unvote(a.id, @category.id)%></span>
-                <%check_owner(a)%>
-                <%=@edit_button%>
-                <%=@delete_button%>
+                <%= edit_article(a)%>
+                <%= delete_article(a)%>
               </div>
             </div>
           </div>

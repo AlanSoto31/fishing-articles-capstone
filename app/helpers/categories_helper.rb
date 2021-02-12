@@ -17,10 +17,15 @@ module CategoriesHelper
            end
   end
 
-  def check_owner(article)
+  def edit_article(article)
     return unless user_sign_in? && (current_user.id == article.author_id)
 
-    @edit_button = link_to 'Edit', edit_fishing_path(article), class: 'text-decoration-none fw-bold'
-    @delete_button = link_to 'Delete', fishing_path(article), method: :delete, class: 'text-decoration-none fw-bold'
+    link_to 'Edit', edit_fishing_path(article), class: 'text-decoration-none fw-bold'
+  end
+
+  def delete_article(article)
+    return unless user_sign_in? && (current_user.id == article.author_id)
+
+    link_to 'Delete', fishing_path(article), method: :delete, class: 'text-decoration-none fw-bold'
   end
 end
