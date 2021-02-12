@@ -6,8 +6,8 @@ class Fishing < ApplicationRecord
 
   has_one_attached :image
 
-  validates :title, presence: true, uniqueness: true, length: { maximum: 50 }
-  validates :text, presence: true, length: { maximum: 200 }
+  validates :title, presence: true, uniqueness: true, length: { in: 5..50 }
+  validates :text, presence: true, length: { in: 5..200 }
 
   scope :order_by_votes, -> { order(votes_count: :desc) }
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
