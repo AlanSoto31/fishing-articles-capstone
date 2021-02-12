@@ -36,6 +36,7 @@
 - [🖥️ Getting Started](#getting-Started)
   - [Prerequisites](#prerequisites)
   - [ Setup](#setup)
+- [Testing](#testing)
 - [👥 Author](#author)
 - [🤝 Contributing](#contributing)
 - [⭐ Show your support](#show-your-support)
@@ -75,13 +76,17 @@ Get a local copy, type on console...
 
 ### Setup
 
-2. Go inside the project folder: `cd fishing-articles-capstone`.
-3. Install dependencies: `bundle install`.
-4. Migrate the database: `rails db:migrate`.
-8. Start the application: `rails s`
-9. Open `http://localhost:3000/` in the browser of your preference.
-10. Stop the application: `ctrl + c`
+1. Go inside the project folder: `cd fishing-articles-capstone`.
+2. Install dependencies: `bundle install`.
+3. Migrate the database: `rails db:migrate`.
+4. Start the application: `rails s`
+5. Open `http://localhost:3000/` in the browser of your preference.
+6. Stop the application: `ctrl + c`
 
+## Testing
+
+1. Go inside the project folder: `cd fishing-articles-capstone`.
+2. Run in your console `rspec spec/features/<"file's name to run">`
 
 ## Author
 
