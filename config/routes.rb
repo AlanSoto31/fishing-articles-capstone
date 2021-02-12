@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :fishings, only: [:new, :create, :destroy, :edit, :update]
-  resources :votes, only: [:new, :create]
+  resources :votes, only: [:new, :create, :destroy]
   resources :categories, only: [:index, :show, :new, :create]
 end

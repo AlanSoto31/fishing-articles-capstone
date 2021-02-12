@@ -16,10 +16,10 @@
                 <p><%= a.text %></p>
                 <p class="text-secondary"><%="By #{a.author.name}" %></p>
               </div>
-              <%make_vote(a.id)%>
+              
               <div class="d-flex justify-content-between">
                 <span><%="Votes:#{a.votes.count}"%></span>
-                <span><%=@vote%></span>
+                <span><%= vote_unvote(a.id, @category.id)%></span>
                 <%check_owner(a)%>
                 <%=@edit_button%>
                 <%=@delete_button%>

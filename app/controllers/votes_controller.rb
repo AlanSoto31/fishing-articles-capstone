@@ -4,17 +4,17 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = current_user.votes.build(vote_params)
-    if @vote.save
-      redirect_to root_path
-    else
-      render 'new'
-    end
+    @category = Category.find_by_id(params[:id])
+    @vote = current_user.votes.build(fishing_id: params[:fishing_id])
+    @vote.save
+    redirect_to @category
+
   end
 
-  private
-
-  def vote_params
-    params.permit(:fishing_id)
+  def destroy
+    @vote = current_user.votes.find_by(fishing_id: params[:fishing_id])
+    @vote.destroy
+    redirect_to category_path
   end
+  
 end
