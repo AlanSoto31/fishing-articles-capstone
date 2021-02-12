@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   root 'categories#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users
-  resources :fishings
-  resources :categories
-  resources :votes
+
+  resources :users, only: [:new, :create]
+  resources :fishings, only: [:new, :create, :destroy, :edit, :update]
+  resources :votes, only: [:new, :create]
+  resources :categories, only: [:index, :show, :new, :create]
 end

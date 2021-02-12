@@ -3,7 +3,6 @@ class FishingsController < ApplicationController
   before_action :check_categories, only: %i[create update]
 
   def index
-    @fishings = Fishing.all
   end
 
   def new
