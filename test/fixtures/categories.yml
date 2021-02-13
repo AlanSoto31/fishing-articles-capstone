@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  priority: MyString
+  priority: 1
 
 two:
   name: MyString
-  priority: MyString
+  priority: 1

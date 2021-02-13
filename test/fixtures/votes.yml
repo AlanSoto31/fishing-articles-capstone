@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  userid: one
-  fishingid: one
+  user: 
+  fishing: one
 
 two:
-  userid: two
-  fishingid: two
+  user: 
+  fishing: two

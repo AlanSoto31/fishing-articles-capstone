@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 User.destroy_all
 
 User.create(name: "alan")
@@ -27,8 +26,6 @@ Category.create(name: "SALT-WATER", priority: 4)
 
 p "Created #{Category.count} categories"
 
-Fishing.destroy_all
-
 Fishing.create(author_id: User.find_by(name: "nata").id, title: "Lure or bait", text: "Fusce laoreet condimentum urna vel volutpat." , votes_count: 1)
 Fishing.create(author_id: User.find_by(name: "will").id, title: "Rods of the feature", text: "Fusce laoreet condimentum urna vel volutpat.", votes_count: 1)
 Fishing.create(author_id: User.find_by(name: "alan").id, title: "Fishing on Amazonas", text: "Fusce laoreet condimentum urna vel volutpat.", votes_count: 1)
@@ -40,8 +37,6 @@ Fishing.create(author_id: User.find_by(name: "kevin").id, title: "Fosil of the s
 
 p "Created #{Fishing.count} articles"
 
-Categorize.destroy_all
-
 Categorize.create(category_id: Category.find_by(name: "LURES").id, fishing_id: Fishing.find_by(title: "Lure or bait").id)
 Categorize.create(category_id: Category.find_by(name: "RODS").id, fishing_id: Fishing.find_by(title: "Rods of the feature").id)
 Categorize.create(category_id: Category.find_by(name: "FRESH-WATER").id, fishing_id: Fishing.find_by(title: "Fishing on Amazonas").id)
@@ -52,8 +47,6 @@ Categorize.create(category_id: Category.find_by(name: "FRESH-WATER").id, fishing
 Categorize.create(category_id: Category.find_by(name: "SALT-WATER").id, fishing_id: Fishing.find_by(title: "Fosil of the seas").id)
 
 p "Created #{Categorize.count} categorizes"
-
-Vote.destroy_all
 
 Vote.create(user_id: User.find_by(name: "nata").id, fishing_id: Fishing.find_by(title: "The best lures for fishing").id)
 Vote.create(user_id: User.find_by(name: "will").id, fishing_id: Fishing.find_by(title: "The best lures for fishing").id)
