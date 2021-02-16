@@ -45,7 +45,8 @@
 
 ## Live Demo
 
-[Live version](https://hidden-mesa-71464.herokuapp.com/categories/8)
+[Live version](https://hidden-mesa-71464.herokuapp.com)
+
 
 
 ## Built With
