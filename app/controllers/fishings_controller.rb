@@ -34,7 +34,7 @@ class FishingsController < ApplicationController
 
   def update
     @fishing = Fishing.find(params[:id])
-
+    @fishing.categories.delete_all
     @cat_ids_arr = fishing_params[:category_id][1..]
     @cat_ids_arr.map!(&:to_i)
     @category = Category.where(id: @cat_ids_arr)
