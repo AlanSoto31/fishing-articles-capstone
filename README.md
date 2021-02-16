@@ -45,7 +45,7 @@
 
 ## Live Demo
 
-[Live version](https://hidden-mesa-71464.herokuapp.com)
+[Live version](https://shielded-taiga-24479.herokuapp.com/)
 
 
 
