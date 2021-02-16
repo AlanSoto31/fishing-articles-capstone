@@ -26,9 +26,11 @@ describe 'Home', type: :feature do
   end
 
   it 'should show the most voted article' do
-    visit 'categories/1'
-    find("a[href='/votes?fishing_id=1']").click
-    visit 'categories'
-    expect(page).to have_content('Title1')
+    visit '/categories'
+    find('#categoryLink').click_link('LURES')
+    first('#voteLink').click_link('Vote')
+    # find("a[href='/votes?fishing_id=1']").click
+    visit '/categories'
+    expect(page).to have_content('Title3')
   end
 end

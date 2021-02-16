@@ -1,1 +1,1 @@
-json.partial! "fishings/fishing", fishing: @fishing
+json.partial! 'fishings/fishing', fishing: @fishing

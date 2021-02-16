@@ -14,7 +14,8 @@ describe 'Make a vote', type: :feature do
   end
 
   it 'once per user' do
-    visit '/categories/1'
+    visit '/categories'
+    find('#categoryLink').click_link('LURES')
     click_on('Vote')
     expect(page).to have_no_link('Vote')
   end

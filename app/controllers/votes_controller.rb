@@ -8,7 +8,6 @@ class VotesController < ApplicationController
     @vote = current_user.votes.build(fishing_id: params[:fishing_id])
     @vote.save
     redirect_to @category
-
   end
 
   def destroy
@@ -16,5 +15,4 @@ class VotesController < ApplicationController
     @vote.destroy
     redirect_to category_path
   end
-  
 end

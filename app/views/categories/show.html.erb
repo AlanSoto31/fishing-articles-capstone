@@ -18,7 +18,7 @@
               
               <div class="d-flex justify-content-between">
                 <span><%="Votes:#{a.votes.count}"%></span>
-                <span><%= vote_unvote(a.id, @category.id)%></span>
+                <span id="voteLink"><%= vote_unvote(a.id, @category.id)%></span>
                 <%= edit_article(a)%>
                 <%= delete_article(a)%>
               </div>

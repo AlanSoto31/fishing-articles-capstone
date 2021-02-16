@@ -2,8 +2,7 @@ class FishingsController < ApplicationController
   before_action :authenticate_user, only: %i[new create]
   before_action :check_categories, only: %i[create update]
 
-  def index
-  end
+  def index; end
 
   def new
     @fishing = Fishing.new

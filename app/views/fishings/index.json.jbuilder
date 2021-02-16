@@ -1,1 +1,1 @@
-json.array! @fishings, partial: "fishings/fishing", as: :fishing
+json.array! @fishings, partial: 'fishings/fishing', as: :fishing
