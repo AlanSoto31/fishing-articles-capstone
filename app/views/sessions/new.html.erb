@@ -1,0 +1,7 @@
+<div class="w-50 border border-secondary p-3 rounded centered_XY">
+  <h5 class="text-center titles_color">Login</h5>
+  <%= form_tag login_path do |f| %>
+    <%= text_field_tag :name, nil, placeholder: "User name", class:"input form-control #{@uclas1}"%><br />
+    <%= submit_tag "Login", class: 'btn btn-success w-100' %>
+  <% end %>
+</div>

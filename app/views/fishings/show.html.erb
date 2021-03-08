@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @fishing.author_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fishing.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @fishing.text %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @fishing.imagen %>
+</p>
+
+<%= link_to 'Edit', edit_fishing_path(@fishing) %> |
+<%= link_to 'Back', fishings_path %>
